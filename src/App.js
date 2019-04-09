@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 
 class App extends Component {
   state = {
@@ -11,24 +10,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ul>
-          <li>{this.state.balls}</li>
-          <li>{this.state.strikes}</li>
-        </ul>
+        <div>
+          <div>Balls: {this.state.balls}</div>
+          <div>Strikes: {this.state.strikes}</div>
+        </div>
         <div className="controls">
-          <button type="button" onClick={this.strike}>
+          <button
+            data-testid="strike-button"
+            type="button"
+            onClick={this.strike}
+          >
             Strike
           </button>
           &nbsp;
-          <button type="button" onClick={this.ball}>
+          <button data-testid="ball-button" type="button" onClick={this.ball}>
             Ball
           </button>
           &nbsp;
-          <button type="button" onClick={this.foul}>
+          <button data-testid="foul-button" type="button" onClick={this.foul}>
             Foul
           </button>
           &nbsp;
-          <button type="button" onClick={this.hit}>
+          <button data-testid="hit-button" type="button" onClick={this.hit}>
             Hit
           </button>
         </div>
